@@ -1,0 +1,40 @@
+{
+  "name": "@aibulat/http",
+  "version": "0.0.1",
+  "description": "command line http client",
+  "main": "dist/post.js",
+  "bin": {
+    "post": "dist/post.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build:watch": "tsc -w",
+    "post": "dist/post.js -u https://httpbin.org/post -f package.json"
+  },
+  "keywords": [
+    "http",
+    "client",
+    "cli",
+    "post"
+  ],
+  "engines": {
+    "node": ">18.0.0"
+  },
+  "author": "Aibulat",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngmaibulat/http.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ngmaibulat/http/issues"
+  },
+  "homepage": "https://github.com/ngmaibulat/http#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.13"
+  },
+  "dependencies": {
+    "@aibulat/isfile": "^0.0.3"
+  }
+}
