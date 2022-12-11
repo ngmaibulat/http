@@ -7,6 +7,7 @@ export function getPostPutArgs() {
     if (process.argv.length < 6) {
         console.error('example: post --url https://httpbin.org/post --filename test.txt');
         console.error('example: post -u https://httpbin.org/post -f test.txt');
+        console.error('example: put  -u https://httpbin.org/put  -f test.txt');
         process.exit(1);
     }
 
@@ -36,8 +37,8 @@ export function getPostPutArgs() {
 
 export function getArgs(method: string) {
     if (process.argv.length < 4) {
-        console.error(`example: ${method} --url https://httpbin.org/post`);
-        console.error(`example: ${method} -u https://httpbin.org/post`);
+        console.error(`example: ${method} --url https://httpbin.org/${method}`);
+        console.error(`example: ${method} -u https://httpbin.org/${method}`);
         process.exit(1);
     }
 

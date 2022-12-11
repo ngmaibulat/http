@@ -1,8 +1,19 @@
 ### HTTP Client CLI
 
-- currently: only post
+- very basic and simple
+- can be useful to test REST APIs, which are available without authentication
+- currently do not have features like inserting custom headers
+- separate command for http methods: get, post, put, delete
 
 ### Install
+
+Use NodeJS 18 or later!
+
+```bash
+sudo npm i -g n
+sudo n lts
+node -v
+```
 
 ```bash
 npm i -g @aibulat/http
