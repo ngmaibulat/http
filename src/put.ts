@@ -7,7 +7,7 @@ const { url, filename } = getPostPutArgs();
 const stream = getFStream(filename);
 
 const res = await fetch(url, {
-    method: 'POST',
+    method: 'PUT',
     // @ts-ignore
     body: stream,
 });

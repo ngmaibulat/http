@@ -2,4 +2,3 @@
 - send in headers: filename, size, type, lastModified
 - basic test via node --test and httpbin
 - github actions: deploy npm
-- other methods: get, put, delete

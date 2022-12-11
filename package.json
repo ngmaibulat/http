@@ -4,13 +4,19 @@
   "description": "command line http client",
   "main": "dist/post.js",
   "bin": {
-    "post": "dist/post.js"
+    "post": "dist/post.js",
+    "put": "dist/put.js",
+    "get": "dist/get.js",
+    "delete": "dist/delete.js"
   },
   "type": "module",
   "scripts": {
     "test": "node --test",
     "build:watch": "tsc -w",
-    "post": "dist/post.js -u https://httpbin.org/post -f package.json"
+    "get": "dist/get.js -u https://httpbin.org/get",
+    "delete": "dist/delete.js -u https://httpbin.org/delete",
+    "post": "dist/post.js -u https://httpbin.org/post -f package.json",
+    "put": "dist/put.js -u https://httpbin.org/put -f package.json"
   },
   "keywords": [
     "http",
