@@ -4,13 +4,9 @@ import fs from 'node:fs';
 import { Readable } from 'node:stream';
 import { ReadableStream } from 'stream/web';
 import isFile from '@aibulat/isfile';
-
 import { getArgs } from './util.js';
 
 const { url, filename } = getArgs();
-
-//if no filename -- read from stdin
-//send in headers: filename, size, type, lastModified
 
 //check file exists
 const fileExists = await isFile(filename);
@@ -19,13 +15,6 @@ if (!fileExists) {
     console.error(`file now found: ${filename}`);
     process.exit(1);
 }
-
-//git
-//npm
-
-//basic test via node --test and httpbin
-//github actions: deploy npm
-//write docs
 
 const fstream = fs.createReadStream(filename);
 const stream = Readable.toWeb(fstream);

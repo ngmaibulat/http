@@ -1,7 +1,9 @@
 #Main
 
 src/*
-
+do.md
+.editorconfig
+.prettierrc.json
 
 # Logs
 logs
