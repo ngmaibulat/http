@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # engines requires >=26, so that is the floor worth testing. Node strips types
+        # natively here, which is what lets the suite run straight off src/*.ts.
+        node: ['26']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run typecheck
+
+      # Straight off src/*.ts ...
+      - run: npm test
+
+      # ... and again against the compiled artifact that actually ships.
+      - run: npm run test:dist
